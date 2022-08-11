@@ -1,32 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-function ResidentIntake({onAddResident, formData, setFormData}) {
+function ResidentIntake({onAddResident}) {
     const navigate = useNavigate();
 
+    const [intakeFormData, setIntakeFormData] = useState({
+      name: "",
+      date_of_birth: "",
+      phone: "",
+      email: "",
+      counselor_id: "",
+      dorm_id: ""
+    })
+
   function handleIntakeInputChange(event) {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setIntakeFormData({ ...intakeFormData, [event.target.name]: event.target.value });
   }
 
   function handleIntakeSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:9292/residents", {
+    fetch("/residents", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(intakeFormData),
     })
       .then((r) => r.json())
       .then((newResident) => {
         onAddResident(newResident);
-        setFormData({
-            name: "",
-            ssn: "",
-            age: "",
-            email: "",
-            needs: "",
-            interests: ""
+        setIntakeFormData({
+          name: "",
+          date_of_birth: "",
+          phone: "",
+          email: "",
+          counselor_id: "",
+          dorm_id: ""
         });
         navigate("/residents");
       });
@@ -41,7 +50,7 @@ function ResidentIntake({onAddResident, formData, setFormData}) {
         <input
           type="text"
           name="name"
-          value={formData.name}
+          value={intakeFormData.name}
           onChange={handleIntakeInputChange}
           placeholder="Enter resident's name"
           className="input-text"
@@ -49,27 +58,26 @@ function ResidentIntake({onAddResident, formData, setFormData}) {
         <br />
         <input
           type="text"
-          name="SSN"
-          value={formData.ssn}
+          name="date_of_birth"
+          value={intakeFormData.date_of_birth}
           onChange={handleIntakeInputChange}
-          placeholder="SSN"
+          placeholder="Date of birth"
           className="input-text"
         ></input>
         <br />
         <input
           type="text"
-          name="age"
-          value={formData.age}
+          name="phone"
+          value={intakeFormData.phone}
           onChange={handleIntakeInputChange}
-          placeholder="Age"
+          placeholder="Phone"
           className="input-text"
         ></input>
         <br />
-
         <input
           type="text"
           name="email"
-          value={formData.email}
+          value={intakeFormData.email}
           onChange={handleIntakeInputChange}
           placeholder="Email address"
           className="input-text"
@@ -77,19 +85,19 @@ function ResidentIntake({onAddResident, formData, setFormData}) {
         <br />
         <input
           type="text"
-          name="needs"
-          value={formData.needs}
+          name="counselor_id"
+          value={intakeFormData.counselor_id}
           onChange={handleIntakeInputChange}
-          placeholder="Resident's needs"
+          placeholder="Counselor ID"
           className="input-text"
         ></input>
         <br />
         <input
           type="text"
-          name="interests"
-          value={formData.interests}
+          name="dorm_id"
+          value={intakeFormData.dorm_id}
           onChange={handleIntakeInputChange}
-          placeholder="Resident's interests"
+          placeholder="Dorm ID"
           className="input-text"
         ></input>
         <br />

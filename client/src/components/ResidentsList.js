@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Tiles, H3 } from "./StyleElements";
 import Resident from "./Resident";
 import ResidentUpdate from "./ResidentUpdate";
+import ResidentIntake from "./ResidentIntake"
 
 
 function ResidentsList() {
@@ -41,7 +42,6 @@ function ResidentsList() {
           <Resident
             key={resident.id}
             resident={resident}
-            
           />
         ))}
         {residents.map((resident) => (
@@ -49,6 +49,12 @@ function ResidentsList() {
             key={resident.id}
             onUpdateResident={handleUpdateResident}
             onDeleteResident={handleDeleteResident}
+            />
+        ))}
+        {residents.map(resident => (
+            <ResidentIntake 
+            key={resident.id}
+            onAddResident={handleAddResident}
             />
         ))}
       </Tiles>
