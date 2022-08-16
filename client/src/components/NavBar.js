@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, NavLink, NavMenu, H3 } from "./StyleElements";
+import { Nav, NavLink, NavMenu, H4 } from "./StyleElements";
 
 function NavBar({user, setUser}) {
   function handleLogoutClick() {
@@ -21,8 +21,9 @@ function NavBar({user, setUser}) {
             Residents
           </NavLink>
           <NavLink to="/resident_intake">Resident Intake</NavLink>
-          <button onClick={handleLogoutClick}>Logout</button> 
-          <H3>{user.firstname}</H3>
+          <button className="btn" onClick={handleLogoutClick}>Logout</button> 
+          <H4>{user.firstname}</H4>
+          
         </NavMenu>
       </Nav>
     </div>

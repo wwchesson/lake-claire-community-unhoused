@@ -25,6 +25,12 @@ code {
   margin: 10px;
 }
 
+.login-text{
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
 .btn{
   padding: 10px;
   margin: 10px;

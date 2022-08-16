@@ -37,6 +37,7 @@ function LoginForm({onLogin, setLoggedIn}) {
                 <br/>
                 <input 
                     type ="text"
+                    className="login-text"
                     id="username"
                     autoComplete="off"
                     value={username}
@@ -47,13 +48,14 @@ function LoginForm({onLogin, setLoggedIn}) {
                 <br/>
                 <input 
                     type="password"
+                    className="login-text"
                     id="password"
                     autoComplete="current-password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <br />
-                <button type="submit">Login</button>
+                <button className="btn" type="submit">Login</button>
                 {errors.map((err) => <h4>{err}</h4> )}
             </form>
         </div>

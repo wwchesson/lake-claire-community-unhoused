@@ -43,11 +43,18 @@ export const Card = styled.div`
   object-fit: contain;
 `;
 
-export const ActCard = styled.div`
+export const UpdateCard = styled.div`
   width: 350px;
-  height: 150px;
+  height: 300px;
   background-color: #08b7fc;
   margin: 10px;
+  padding: 10px;
+  object-fit: contain;
+`;
+
+export const LoginCard = styled.div`
+  width: 250px;
+  height: 150px;
   padding: 10px;
   object-fit: contain;
 `;
@@ -59,10 +66,23 @@ justify-content: space-evenly;
 padding: 20px;
 `;
 
+export const LoginHeader = styled.div`
+  margin-left: 10px;
+  margin-bottom: 0px;
+`;
+
 export const H3 = styled.div`
   color: black;
   text-align: center;
   // font-family: "Roboto";
   font-size: 3em;
   padding: 5px;
+`;
+
+export const H4 = styled.div`
+  color: white;
+  text-align: right;
+  // font-family: "Roboto";
+  font-size: 1.5em;
+  padding: 15px;
 `;
