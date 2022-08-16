@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, NavLink, NavMenu, H4 } from "./StyleElements";
 
 function NavBar({user, setUser}) {
+  
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {

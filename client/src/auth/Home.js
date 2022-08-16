@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import {LoginCard} from "../components/StyleElements"
 
-function Home ({onLogin, setLoggedIn}) {
+function Home ({onLogin}) {
     
     const [showLogin, setShowLogin] = useState(true); 
 
@@ -15,7 +15,7 @@ function Home ({onLogin, setLoggedIn}) {
         <LoginCard>
             {showLogin ? (
             <>
-            <LoginForm onLogin={onLogin} setLoggedIn={setLoggedIn}/>
+            <LoginForm onLogin={onLogin} />
             <br />
             <p>
             Create an account &nbsp;

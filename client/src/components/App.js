@@ -19,7 +19,6 @@ function App() {
       });
   }, []);
 
-
   function handleAddResident(newResident) {
     setResidents([...residents, newResident]);
   }
