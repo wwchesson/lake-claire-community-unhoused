@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card } from "./StyleElements";
 import { Link } from "react-router-dom";
 
-function Resident({ resident }) {
+function Resident({ resident, act }) {
   const { id, name, date_of_birth, phone, email } = resident;
 
   const [res, setRes] = useState([])
@@ -15,7 +15,8 @@ function Resident({ resident }) {
       setRes(data);
     })
   }, [id])
-  
+
+   
   function showDorm() {
     if (res.dorm != null) {
     return <h4>{res.dorm.name}</h4>
@@ -24,13 +25,11 @@ function Resident({ resident }) {
     }
   }
 
-  function showActivities() {
-    if (res.activities != null) {
-      return <div>{res.activities.map(act => <h4 key={act.id}>{act.name}</h4>)}</div>
-    } else {
-      return <h4>No activities</h4>
-    }
+function showAct() {
+  if (act != null) {
+    return <div>{act.map((activity) => <h4 key={activity.id}>{activity.name} - {activity.day_of_week} - {activity.time_of_day} - Teacher: {activity.teacher.name}</h4>)}</div>
   }
+}
 
   function showCounselor() {
     if (res.counselor != null) {
@@ -41,15 +40,13 @@ function Resident({ resident }) {
   }
 
   return (
-    
     <Card>
-      
       <h3><strong>{name}</strong></h3>
       <h4>Date of Birth: {date_of_birth}</h4>
       <h4> Phone: {phone}</h4>
       <h4>Email Address: {email}</h4>
       <br />
-      <h4>Activities: </h4>{showActivities()}
+      <h4>Activities: </h4>{showAct()} 
       <h4>Dorm:</h4>{showDorm()}    
       <h4>Counselor:</h4>{showCounselor()}
 
