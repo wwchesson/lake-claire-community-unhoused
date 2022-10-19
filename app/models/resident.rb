@@ -4,5 +4,5 @@ class Resident < ApplicationRecord
     belongs_to :dorm
     belongs_to :counselor
 
-
+   
 end

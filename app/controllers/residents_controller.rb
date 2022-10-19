@@ -5,7 +5,7 @@ class ResidentsController < ApplicationController
   def index
     # byebug
     @residents = Resident.all
-    render json: @residents, include: :activities
+    render json: @residents
   end
 
   # GET /residents/1
@@ -39,7 +39,7 @@ class ResidentsController < ApplicationController
     @resident.destroy
   end
 
-  private
+    private
     # Use callbacks to share common setup or constraints between actions.
     def set_resident
       @resident = Resident.find(params[:id])

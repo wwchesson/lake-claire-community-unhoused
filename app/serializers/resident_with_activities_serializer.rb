@@ -3,4 +3,6 @@ class ResidentWithActivitiesSerializer < ActiveModel::Serializer
   has_many :activities
   belongs_to :dorm
   belongs_to :counselor
+
+  
 end

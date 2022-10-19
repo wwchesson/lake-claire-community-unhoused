@@ -66,14 +66,14 @@ function ResidentUpdate({ onUpdateResident, onDeleteResident }) {
       <UpdateCard>
         <h4 className="home-text">{individualRes.name}</h4>
         <form onSubmit={handleSubmit}>
-          <input
+          <select
             type="text"
             name="counselor_id"
             value={updateFormData.counselor_id}
             onChange={handleUpdateInputChange}
             placeholder="New counselor's ID"
             className="input-text"
-          ></input>
+          ></select>
           <br />
           <input
             type="text"
@@ -91,9 +91,11 @@ function ResidentUpdate({ onUpdateResident, onDeleteResident }) {
             className="btn"
           ></input>
           <br />
-          <button className="btn" onClick={handleDeleteClick}>Delete Resident</button>
+          <button className="btn" onClick={handleDeleteClick}>
+            Delete Resident
+          </button>
         </form>
-        </UpdateCard>
+      </UpdateCard>
     </Tiles>
   );
 }

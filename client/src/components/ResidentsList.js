@@ -14,9 +14,16 @@ function ResidentsList({residents}) {
     })
   }, [])
 
+  function printActivities() {
+    fetch("/orderedactivities")
+    .then(r => r.json())
+    .then((data) => console.log(data))
+  }
+
   return (
     <div className="residents">
       <H3>Residents</H3>
+      <button onClick={printActivities}>Print Activities</button>
       <Tiles>
         {residents.map((resident) => (
           <Resident

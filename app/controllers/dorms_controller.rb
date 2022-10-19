@@ -3,9 +3,15 @@ class DormsController < ApplicationController
 
   # GET /dorms
   def index
-    @dorms = Dorm.all
+    if params[:resident_id]
+      resident = Resident.find(params[:resident_id])
+      dorms = resident.dorm
+    else
+      dorms = Dorm.all
+    end
 
-    render json: @dorms
+    render json: dorms 
+
   end
 
   # GET /dorms/1

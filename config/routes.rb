@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  get "/orderedactivities", to: "activities#ordered"
+
   resources :dorms
-  resources :residents
+  resources :residents 
   resources :counselors
   resources :activities
   resources :teachers

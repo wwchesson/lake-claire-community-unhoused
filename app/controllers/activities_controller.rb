@@ -1,11 +1,22 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :update, :destroy]
 
+
+  def ordered
+    activities = Activity.order(:name).pluck(:name)
+    render json: activities
+  end
+
   # GET /activities
   def index
-    @activities = Activity.all
-
-    render json: @activities
+    if params[:resident_id]
+      resident = Resident.find(params[:resident_id])
+      activities = resident.activities
+    else
+      activities = Activity.all
+    end
+    
+    render json: activities
   end
 
   # GET /activities/1
