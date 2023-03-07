@@ -2,15 +2,31 @@ import React, { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import {LoginCard} from "../components/StyleElements"
+import { Card, CardContent, Typography } from "@mui/material";
 
 function Home ({onLogin}) {
-    
-    const [showLogin, setShowLogin] = useState(true); 
+
+    const [showLogin, setShowLogin] = useState(true);
 
     return (
         <div>
-        <h1 className="home-text">The Lake Claire Community for the Unhoused</h1>
-        <br/>
+        <Card sx={{ bgcolor: "blue"}}>
+            <CardContent
+            sx={{
+                margin: "auto",
+            display: "flex",
+            justifyContent: "center",
+            maxWidth: "800px"
+            }}
+            >
+                <Typography
+                variant="h4"
+                color="white"
+                >The Lake Claire Community for the Unhoused</Typography>
+            </CardContent>
+        </Card>
+        <br />
+
         <h2 className="home-text">Manager Login Page</h2>
         <LoginCard>
             {showLogin ? (
@@ -33,10 +49,10 @@ function Home ({onLogin}) {
             </>
         ) }
         </LoginCard>
-        
-            
+
+
         </div>
     )
 }
 
-export default Home   
+export default Home
