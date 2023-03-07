@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import {LoginCard} from "../components/StyleElements"
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import coverphoto from "./coverphoto.jpeg"
 
 function Home ({onLogin}) {
 
@@ -25,8 +26,11 @@ function Home ({onLogin}) {
                 >The Lake Claire Community for the Unhoused</Typography>
             </CardContent>
         </Card>
-        <br />
-
+        <Card>
+            <CardMedia>
+                <img src={coverphoto}/>
+            </CardMedia>
+        </Card>
         <h2 className="home-text">Manager Login Page</h2>
         <LoginCard>
             {showLogin ? (
