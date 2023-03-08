@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_08_184915) do
+ActiveRecord::Schema.define(version: 2023_03_08_190853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,25 +34,11 @@ ActiveRecord::Schema.define(version: 2023_03_08_184915) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string "title"
-    t.string "name"
-    t.string "date_of_birth"
-    t.string "phone"
-    t.string "email"
-    t.string "address"
-    t.string "emer_name"
-    t.string "emer_phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "residents", force: :cascade do |t|
-    t.string "name"
-    t.string "date_of_birth"
-    t.string "phone"
-    t.string "email"
-    t.string "counselor_id"
-    t.string "dorm_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,9 +60,16 @@ ActiveRecord::Schema.define(version: 2023_03_08_184915) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "firstname"
-    t.string "lastname"
+    t.string "name"
     t.string "type"
+    t.string "title"
+    t.string "date_of_birth"
+    t.string "phone"
+    t.string "address"
+    t.string "emer_name"
+    t.string "emer_phone"
+    t.integer "employee_id"
+    t.integer "dorm_id"
   end
 
 end
