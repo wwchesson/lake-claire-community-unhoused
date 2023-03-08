@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import {LoginCard} from "../components/StyleElements"
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import coverphoto from "./coverphoto.jpeg"
+import garden from "./garden.jpeg"
 
 function Home ({onLogin}) {
 
@@ -23,9 +23,10 @@ function Home ({onLogin}) {
 
             </CardContent>
         </Card>
-        <Card>
-            <CardContent style={{ backgroundImage: `url(${coverphoto})`, backgroundRepeat: "no-repeat", height: "400px", backgroundPosition: "center", justifyContent: "center", margin: "auto", display: "flex"}}>
-                <Typography variant="h4" color="white">Lake Claire</Typography>
+        <Card sx={{ display: "flex"}}>
+            <CardContent style={{ backgroundImage: `url(${garden})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", height: "275px", width: "100vw", backgroundPosition: "center", justifyContent: "center", margin: "auto", display: "flex", }}>
+
+                <Typography variant="h4" marginTop="225px" color="white"><strong>The Lake Claire Community for the Unhoused</strong></Typography>
             </CardContent>
         </Card>
         <h2 className="home-text">Manager Login Page</h2>
