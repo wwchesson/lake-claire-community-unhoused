@@ -20,16 +20,13 @@ function Home ({onLogin}) {
             maxWidth: "800px"
             }}
             >
-                <Typography
-                variant="h4"
-                color="white"
-                >The Lake Claire Community for the Unhoused</Typography>
+
             </CardContent>
         </Card>
         <Card>
-            <CardMedia>
-                <img src={coverphoto}/>
-            </CardMedia>
+            <CardContent style={{ backgroundImage: `url(${coverphoto})`, backgroundRepeat: "no-repeat", height: "400px", backgroundPosition: "center", justifyContent: "center", margin: "auto", display: "flex"}}>
+                <Typography variant="h4" color="white">Lake Claire</Typography>
+            </CardContent>
         </Card>
         <h2 className="home-text">Manager Login Page</h2>
         <LoginCard>
