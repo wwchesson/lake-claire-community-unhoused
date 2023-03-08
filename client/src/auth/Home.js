@@ -11,7 +11,7 @@ function Home ({onLogin}) {
 
     return (
         <div>
-        <Card sx={{ bgcolor: "blue"}}>
+        {/* <Card sx={{ bgcolor: "blue"}}>
             <CardContent
             sx={{
                 margin: "auto",
@@ -22,11 +22,11 @@ function Home ({onLogin}) {
             >
 
             </CardContent>
-        </Card>
+        </Card> */}
         <Card sx={{ display: "flex"}}>
             <CardContent style={{ backgroundImage: `url(${garden})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", height: "275px", width: "100vw", backgroundPosition: "center", justifyContent: "center", margin: "auto", display: "flex", }}>
 
-                <Typography variant="h4" marginTop="225px" color="white"><strong>The Lake Claire Community for the Unhoused</strong></Typography>
+                <Typography variant="h3" marginTop="200px" color="white"><strong>The Lake Claire Community for the Unhoused</strong></Typography>
             </CardContent>
         </Card>
         <h2 className="home-text">Manager Login Page</h2>
