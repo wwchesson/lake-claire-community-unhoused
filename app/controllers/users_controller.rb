@@ -10,7 +10,12 @@ class UsersController < ApplicationController
     def show
         render json: @current_user, status: :created
     end
-        
+
+    def index
+        @users = User.all
+        render json: @users
+    end
+
     private
     def user_params
         params.permit(:firstname, :lastname, :username, :password, :password_confirmation)

@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get "/orderedactivities", to: "activities#ordered"
 
   resources :dorms
-  resources :residents 
+  resources :residents
   resources :counselors
   resources :activities
   resources :teachers
+  resources :users
+
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
