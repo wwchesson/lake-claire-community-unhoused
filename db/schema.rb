@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_10_151659) do
+ActiveRecord::Schema.define(version: 2023_03_08_184915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,15 @@ ActiveRecord::Schema.define(version: 2022_08_10_151659) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "counselors", force: :cascade do |t|
+  create_table "dorms", force: :cascade do |t|
+    t.string "name"
+    t.integer "floor"
+    t.integer "number_of_beds"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
     t.string "title"
     t.string "name"
     t.string "date_of_birth"
@@ -34,14 +42,6 @@ ActiveRecord::Schema.define(version: 2022_08_10_151659) do
     t.string "address"
     t.string "emer_name"
     t.string "emer_phone"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "dorms", force: :cascade do |t|
-    t.string "name"
-    t.integer "floor"
-    t.integer "number_of_beds"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_151659) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "firstname"
     t.string "lastname"
+    t.string "type"
   end
 
 end
