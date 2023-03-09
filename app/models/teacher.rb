@@ -1,4 +1,4 @@
-class Teacher < ApplicationRecord
+class Teacher < User
     has_many :activities
     has_many :residents, through: :activities
 

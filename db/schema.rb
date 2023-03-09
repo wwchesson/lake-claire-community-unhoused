@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_09_175240) do
+ActiveRecord::Schema.define(version: 2023_03_09_183734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2023_03_09_175240) do
     t.string "day_of_week"
     t.string "time_of_day"
     t.integer "teacher_id"
-    t.integer "resident_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -80,6 +79,7 @@ ActiveRecord::Schema.define(version: 2023_03_09_175240) do
     t.string "emer_phone"
     t.integer "employee_id"
     t.integer "dorm_id"
+    t.string "email"
   end
 
 end
