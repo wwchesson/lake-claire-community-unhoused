@@ -36,6 +36,11 @@ Activity.create(name: "Study Hall", day_of_week: "All", time_of_day: "15:00", te
 Activity.create(name: "Cleaning", day_of_week: "M, W, F", time_of_day: "17:00", teacher_id: 5)
 Activity.create(name: "Classes", day_of_week: "All", time_of_day: "9:00", teacher_id: 5)
 
+# ResidentActivity.create(resident_id: , activity_id: )
+# ResidentActivity.create(resident_id: , activity_id: )
+# ResidentActivity.create(resident_id: , activity_id: )
+# ResidentActivity.create(resident_id: , activity_id: )
+# ResidentActivity.create(resident_id: , activity_id: )
 
 
 
