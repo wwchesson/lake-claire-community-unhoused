@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get "/orderedactivities", to: "activities#ordered"
+  # get "/residents", to: "users#getresidents"
 
   resources :dorms
   resources :residents
-  resources :counselors
+  # resources :counselors
   resources :activities
   resources :teachers
   resources :users
