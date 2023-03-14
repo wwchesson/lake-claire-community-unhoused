@@ -1,3 +1,3 @@
 class ResidentSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date_of_birth, :phone, :email, :counselor_id, :dorm_id
+  attributes :id, :username, :name, :title, :type, :date_of_birth, :phone, :emer_name, :emer_phone
 end
