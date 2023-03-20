@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: :create, :getresidents
+    skip_before_action :authorize, only: :create
 
     def create
         user = User.create!(user_params)
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
         render json: @users
     end
 
-    def getresidents
-        @residents = User.where(type: "Resident")
-        render json: @residents
-    end
+    # def getresidents
+    #     @residents = User.where(type: "Resident")
+    #     render json: @residents
+    # end
 
     private
     def user_params
