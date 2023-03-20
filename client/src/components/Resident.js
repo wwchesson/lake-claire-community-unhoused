@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "./StyleElements";
+// import { Card } from "./StyleElements";
 import { Link } from "react-router-dom";
+import {Box, Card, CardMedia, CardContent, Typography, Avatar, Button} from "@mui/material"
 
 function Resident({ resident, act }) {
   const { id, name, date_of_birth, phone, email } = resident;
@@ -11,7 +12,7 @@ function Resident({ resident, act }) {
     fetch(`/residents/${id}`)
     .then(r => r.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       setRes(data);
     })
   }, [id])
@@ -40,6 +41,13 @@ function Resident({ resident, act }) {
   // }
 
   return (
+    <div>
+    <Box>
+      <Avatar>
+        
+      </Avatar>
+    </Box>
+
     <Card>
       <h3><strong>{name}</strong></h3>
       <h4>Date of Birth: {date_of_birth}</h4>
@@ -52,6 +60,8 @@ function Resident({ resident, act }) {
 
       <h4><Link to={`/residents/${id}`}>Click to update resident</Link></h4>
     </Card>
+    </div>
+
   );
 }
 

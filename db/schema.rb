@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_14_193128) do
+ActiveRecord::Schema.define(version: 2023_03_20_203243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2023_03_14_193128) do
     t.integer "therapist_id"
     t.integer "dorm_id"
     t.string "email"
+    t.string "image"
   end
 
 end
