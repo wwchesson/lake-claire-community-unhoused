@@ -5,6 +5,8 @@ class Resident < User
     belongs_to :dorm
     belongs_to :therapist
 
-
+    def resident_dorm
+        self.dorm.name
+    end
 
 end

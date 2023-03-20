@@ -11,7 +11,7 @@ class ResidentsController < ApplicationController
   # GET /residents/1
   def show
     resident = Resident.find(params[:id])
-    render json: resident, serializer: ResidentWithActivitiesSerializer
+    render json: resident
   end
 
   # POST /residents
