@@ -6,21 +6,20 @@ function ResidentUpdate({ onUpdateResident, onDeleteResident }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [individualRes, setIndividualRes] = useState([]);
+  // const [individualRes, setIndividualRes] = useState([]);
 
   const [updateFormData, setUpdateFormData] = useState({
-    counselor_id: "",
     dorm_id: "",
   });
 
-  useEffect(() => {
-    fetch(`/residents/${id}`)
-      .then((r) => r.json())
-      .then((data) => {
-        setIndividualRes(data);
-        console.log(data);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`/residents/${id}`)
+  //     .then((r) => r.json())
+  //     .then((data) => {
+  //       // setIndividualRes(data);
+  //       console.log(data);
+  //     });
+  // }, [id]);
 
   function handleUpdateInputChange(event) {
     setUpdateFormData({
@@ -63,7 +62,7 @@ function ResidentUpdate({ onUpdateResident, onDeleteResident }) {
 
   return (
     <Tiles>
-      <UpdateCard>
+      {/* <UpdateCard>
         <h4 className="home-text">{individualRes.name}</h4>
         <form onSubmit={handleSubmit}>
           <select
@@ -95,7 +94,7 @@ function ResidentUpdate({ onUpdateResident, onDeleteResident }) {
             Delete Resident
           </button>
         </form>
-      </UpdateCard>
+      </UpdateCard>*/}
     </Tiles>
   );
 }

@@ -9,22 +9,23 @@ import {
   Typography,
   Avatar,
   Button,
-  Grid
+  Grid,
 } from "@mui/material";
+import ResidentFullProfile from "./ResidentFullProfile";
 
 function Resident({ resident, act }) {
   const { id, name, date_of_birth, phone, email, image } = resident;
 
-  const [res, setRes] = useState([]);
+  // const [res, setRes] = useState([]);
 
-  useEffect(() => {
-    fetch(`/residents/${id}`)
-      .then((r) => r.json())
-      .then((data) => {
-        // console.log(data);
-        setRes(data);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`/residents/${id}`)
+  //     .then((r) => r.json())
+  //     .then((data) => {
+  //       // console.log(data);
+  //       setRes(data);
+  //     });
+  // }, [id]);
 
   // function showDorm() {
   //   if (res.dorm != null) {
@@ -50,40 +51,56 @@ function Resident({ resident, act }) {
 
   return (
     <div>
-      <Grid
-      item xs={12} sm={6} md={4}
-      >
+      <Grid item xs={12} sm={6} md={4}>
         <Card
-        sx={{width: "200px", height: "300px", padding: "40px", borderRadius: "16px", border: 1, margin: "10px"}}
+          sx={{
+            width: "200px",
+            height: "300px",
+            padding: "40px",
+            borderRadius: "16px",
+            border: 1,
+            margin: "10px",
+          }}
         >
-      <Box
-        // className="resident-profile"
+          <Box
+            // className="resident-profile"
 
-        alignItems="center"
-        display="flex"
-        // margin="auto"
-        flexDirection="column"
-        flexGrow="1"
-      >
-        <Avatar
-          alt={name}
-          src={image}
-          sx={{ width: 150, height: 150}}
-        ></Avatar>
-      </Box>
+            alignItems="center"
+            display="flex"
+            // margin="auto"
+            flexDirection="column"
+            flexGrow="1"
+          >
+            <Avatar
+              alt={name}
+              src={image}
+              sx={{ width: 150, height: 150 }}
+            ></Avatar>
+          </Box>
 
-        <CardContent>
-        <Typography>
-          {name}
-        </Typography>
-       </CardContent>
-
-
-
+          <CardContent
+            sx={{
+              justifyContent: "center",
+              alignItems: "center",
+              marginLeft: "10px"
+              // display: "flex",
+            }}
+          >
+            <Link to={`/residents/${id}`}>
+              <Typography variant="h6">{name}</Typography>
+            </Link>
+            <br />
+            <Typography>
+              Activities
+            </Typography>
+            <br />
+            <Typography>
+              Mentor
+            </Typography>
+          </CardContent>
         </Card>
 
-
-      {/* <Card>
+        {/* <Card>
         <h3>
           <strong>{name}</strong>
         </h3>
@@ -94,13 +111,12 @@ function Resident({ resident, act }) {
         {/* <h4>Activities: </h4>{showAct()}
       <h4>Dorm:</h4>{showDorm()}
       <h4>Counselor:</h4>{showCounselor()} */}
-{/*
+        {/*
         <h4>
           <Link to={`/residents/${id}`}>Click to update resident</Link>
         </h4>
       </Card> */}
       </Grid>
-
     </div>
   );
 }

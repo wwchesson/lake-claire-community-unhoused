@@ -4,7 +4,8 @@ import ResidentsList from "./ResidentsList";
 import NavBar from "./NavBar";
 import ResidentIntake from "./ResidentIntake";
 import Home from "../auth/Home";
-import ResidentUpdate from "./ResidentUpdate";
+import ResidentUpdate from "./ResInfoUpdate";
+import ResidentFullProfile from "./ResidentFullProfile";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ function App() {
     fetch("/residents")
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setResidents(data);
       });
   }, []);
@@ -65,7 +66,7 @@ function App() {
             />
           }
         />
-        <Route path="/residents/:id" element={<ResidentUpdate onUpdateResident={handleUpdateResident}
+        <Route path="/residents/:id" element={<ResidentFullProfile onUpdateResident={handleUpdateResident}
         onDeleteResident={handleDeleteResident}
         />}></Route>
       </Routes>

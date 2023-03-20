@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Tiles, H3 } from "./StyleElements";
 import {Container, Grid } from "@mui/material"
 
-import Resident from "./Resident";
+import Resident from "./ResidentCard";
 
 function ResidentsList({residents}) {
   const [activity, setActivity] = useState([])
