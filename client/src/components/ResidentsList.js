@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Tiles, H3 } from "./StyleElements";
+import {Container, Grid } from "@mui/material"
+
 import Resident from "./Resident";
 
 function ResidentsList({residents}) {
@@ -20,16 +22,20 @@ function ResidentsList({residents}) {
     <div className="residents">
       <H3>Residents</H3>
 
-      <Tiles>
-        {residents.map((resident) => (
+      <Container >
+        <Grid container spacing={2} justifyContent="center">
+       {residents.map((resident) => (
           <Resident
             key={resident.id}
             resident={resident}
             // act={activity.filter((act) => act.resident_id === resident.id)}
           />
         ))}
+        </Grid>
+      </Container>
 
-      </Tiles>
+
+
     </div>
   );
 }
