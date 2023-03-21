@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom"
-import {Box, Card, CardContent, Avatar, Typography } from "@mui/material"
+import {Box, Card, CardContent, Avatar, Typography, Button } from "@mui/material"
 
 
 function ResidentFullProfile() {
@@ -17,6 +17,9 @@ setIndividualRes(data)
 
         })
     }, [id])
+
+
+//hello money poney
 
     return (
         <div>
