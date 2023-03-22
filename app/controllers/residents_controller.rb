@@ -14,6 +14,13 @@ class ResidentsController < ApplicationController
     render json: resident
   end
 
+  #GET /residentactivities/:id
+  def res_activities_route
+    activities = Resident.find(params[:id]).activities
+
+    render json: activities
+  end
+
   # POST /residents
   def create
     @resident = Resident.new(resident_params)

@@ -3,4 +3,6 @@ class Activity < ApplicationRecord
 
     has_many :resident_activities
     has_many :residents, through: :resident_activities
+
+    
 end

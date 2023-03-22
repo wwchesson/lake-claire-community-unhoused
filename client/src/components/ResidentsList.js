@@ -4,7 +4,7 @@ import {Container, Grid } from "@mui/material"
 
 import Resident from "./ResidentCard";
 
-function ResidentsList({residents}) {
+function ResidentsList({residents, onActClick, showActivities}) {
   const [activity, setActivity] = useState([])
 
   useEffect(() => {
@@ -28,6 +28,9 @@ function ResidentsList({residents}) {
           <Resident
             key={resident.id}
             resident={resident}
+            activity={resident.res_activities}
+            onActClick={onActClick}
+            showActivities={showActivities}
             // act={activity.filter((act) => act.resident_id === resident.id)}
           />
         ))}

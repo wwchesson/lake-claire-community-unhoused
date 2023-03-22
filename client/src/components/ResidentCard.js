@@ -12,8 +12,10 @@ import {
   Grid,
 } from "@mui/material";
 import ResidentFullProfile from "./ResidentFullProfile";
+import ResActivities from "./ResActivities";
 
-function Resident({ resident, act }) {
+function Resident({ resident, activity, onActClick, showActivities }) {
+
   const { id, name, date_of_birth, phone, email, image, resident_therapist, res_activities } = resident;
 
   return (
@@ -57,9 +59,20 @@ function Resident({ resident, act }) {
               <Typography variant="h6">{name}</Typography>
             </Link>
             <br />
+            <Link to={`/residents/${id}`}>
+            <Button onClick={() => onActClick(true)}>
+              Activities
+            </Button>
+
+            </Link>
+
+
+            {/* <Link to={`/residents/${id}`} >
             <Typography>
               Activities
             </Typography>
+            </Link> */}
+
             <br />
             <Typography>
               Mentor: {resident_therapist}

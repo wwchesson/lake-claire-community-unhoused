@@ -6,10 +6,13 @@ import ResidentIntake from "./ResidentIntake";
 import Home from "../auth/Home";
 import ResidentUpdate from "./ResInfoUpdate";
 import ResidentFullProfile from "./ResidentFullProfile";
+import ResActivities from "./ResActivities";
 
 function App() {
   const [user, setUser] = useState(null);
   const [residents, setResidents] = useState([]);
+  const [showActivities, setShowActivities] = useState(false)
+
 
   useEffect(() => {
     fetch("/residents")
@@ -19,6 +22,7 @@ function App() {
         setResidents(data);
       });
   }, []);
+
 
   function handleAddResident(newResident) {
     setResidents([...residents, newResident]);
@@ -55,7 +59,7 @@ function App() {
         <Route
           path="/residents"
           element={
-            <ResidentsList residents={residents}/>
+            <ResidentsList residents={residents} onActClick={setShowActivities} showActivities={showActivities}/>
           }
         />
         <Route
@@ -67,9 +71,10 @@ function App() {
           }
         />
         <Route path="/residents/:id" element={<ResidentFullProfile onUpdateResident={handleUpdateResident}
-        onDeleteResident={handleDeleteResident}
+        onDeleteResident={handleDeleteResident} onActClick={setShowActivities} showActivities={showActivities}
         />}></Route>
-      
+      <Route path="/residentactivities/:id" element={<ResActivities />}>
+      </Route>
       </Routes>
     </div>
   );

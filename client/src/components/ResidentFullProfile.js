@@ -3,9 +3,10 @@ import {useParams} from "react-router-dom"
 import {Box, Card, CardContent, Avatar, Typography, Button } from "@mui/material"
 
 
-function ResidentFullProfile() {
+function ResidentFullProfile({onActClick, showActivities}) {
     const { id } = useParams();
     const [individualRes, setIndividualRes] = useState([])
+
     const {name, image, email, date_of_birth, phone, resident_dorm} = individualRes
 
     useEffect(() => {
@@ -18,11 +19,13 @@ setIndividualRes(data)
         })
     }, [id])
 
-
-//hello money poney
+console.log(showActivities)
 
     return (
-        <div className="full-profile">
+<div className="full-profile">
+
+
+
  <Card
           sx={{
             width: "350px",
@@ -78,6 +81,8 @@ setIndividualRes(data)
         </CardContent>
         </Card>
         </div>
+
+
     )
 }
 
