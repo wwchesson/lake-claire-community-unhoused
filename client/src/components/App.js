@@ -69,6 +69,7 @@ function App() {
         <Route path="/residents/:id" element={<ResidentFullProfile onUpdateResident={handleUpdateResident}
         onDeleteResident={handleDeleteResident}
         />}></Route>
+      
       </Routes>
     </div>
   );

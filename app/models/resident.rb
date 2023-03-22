@@ -13,4 +13,8 @@ class Resident < User
         self.therapist.name
     end
 
+    def res_activities
+        self.activities
+    end
+
 end

@@ -14,40 +14,7 @@ import {
 import ResidentFullProfile from "./ResidentFullProfile";
 
 function Resident({ resident, act }) {
-  const { id, name, date_of_birth, phone, email, image, resident_therapist } = resident;
-
-  // const [res, setRes] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`/residents/${id}`)
-  //     .then((r) => r.json())
-  //     .then((data) => {
-  //       // console.log(data);
-  //       setRes(data);
-  //     });
-  // }, [id]);
-
-  // function showDorm() {
-  //   if (res.dorm != null) {
-  //   return <h4>{res.dorm.name}</h4>
-  //   } else {
-  //     return <h4>No dorm</h4>
-  //   }
-  // }
-
-  // function showAct() {
-  //   if (act != null) {
-  //     return <div>{act.map((activity) => <h4 key={activity.id}>{activity.name} - {activity.day_of_week} - {activity.time_of_day} - Teacher: {activity.teacher.name}</h4>)}</div>
-  //   }
-  // }
-
-  //   function showCounselor() {
-  //     if (res.counselor != null) {
-  //       return <h4>{res.counselor.name}</h4>
-  //     } else {
-  //       return <h4>No counselor</h4>
-  //     }
-  // }
+  const { id, name, date_of_birth, phone, email, image, resident_therapist, res_activities } = resident;
 
   return (
     <div>
