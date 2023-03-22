@@ -14,7 +14,7 @@ import {
 import ResidentFullProfile from "./ResidentFullProfile";
 
 function Resident({ resident, act }) {
-  const { id, name, date_of_birth, phone, email, image } = resident;
+  const { id, name, date_of_birth, phone, email, image, resident_therapist } = resident;
 
   // const [res, setRes] = useState([]);
 
@@ -54,7 +54,7 @@ function Resident({ resident, act }) {
       <Grid item xs={12} sm={6} md={4}>
         <Card
           sx={{
-            width: "200px",
+            width: "220px",
             height: "300px",
             padding: "40px",
             borderRadius: "16px",
@@ -95,7 +95,7 @@ function Resident({ resident, act }) {
             </Typography>
             <br />
             <Typography>
-              Mentor
+              Mentor: {resident_therapist}
             </Typography>
           </CardContent>
         </Card>

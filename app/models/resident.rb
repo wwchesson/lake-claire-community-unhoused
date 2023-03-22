@@ -9,4 +9,8 @@ class Resident < User
         self.dorm.name
     end
 
+    def resident_therapist
+        self.therapist.name
+    end
+
 end

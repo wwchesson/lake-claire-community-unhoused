@@ -22,15 +22,17 @@ setIndividualRes(data)
 //hello money poney
 
     return (
-        <div>
+        <div className="full-profile">
  <Card
           sx={{
-            width: "400px",
+            width: "350px",
             height: "400px",
             padding: "40px",
             borderRadius: "16px",
             border: 1,
-            margin: "10px",
+            margin: "75px",
+            justifyContent: "center",
+            backgroundColor: "#f6f7c3",
           }}
         >
           <Box
@@ -51,15 +53,16 @@ setIndividualRes(data)
 
           <CardContent
             sx={{
-              justifyContent: "center",
+              justifyContent: "space-evenly",
               alignItems: "center",
-              marginLeft: "10px"
+              marginLeft: "80px"
               // display: "flex",
             }}
             >
-            <Typography>
-                {name}
+            <Typography variant="h6" >
+                <strong>{name}</strong>
             </Typography>
+            <br />
             <Typography>
                 <strong>DOB:</strong>{date_of_birth}
             </Typography>

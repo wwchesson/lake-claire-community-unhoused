@@ -41,3 +41,10 @@ code {
   margin: 0px;
 }
 
+.full-profile{
+  justify-content: center;
+  display: flex;
+  background-color: #ad75bf;
+  height: 100vh;
+}
+
