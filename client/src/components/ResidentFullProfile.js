@@ -12,6 +12,7 @@ import {
 function ResidentFullProfile({ onActClick, showActivities }) {
   const { id } = useParams();
   const [individualRes, setIndividualRes] = useState([]);
+  const [resAct, setResAct] = useState([])
 
   const {
     name,
@@ -27,12 +28,13 @@ function ResidentFullProfile({ onActClick, showActivities }) {
     fetch(`${id}`)
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
         setIndividualRes(data);
+        setResAct(data.res_activities)
+
       });
   }, [id]);
 
-  console.log(showActivities);
+
 
   return (
     <div className="full-profile">
@@ -74,10 +76,15 @@ function ResidentFullProfile({ onActClick, showActivities }) {
               // display: "flex",
             }}
           >
-          
-
+          <Typography variant="h6">
+            {name}
+          </Typography>
+          {resAct.map(act => (
+            <Typography key={act.id}>{act.name} - {act.day_of_week} - {act.time_of_day}</Typography>
+          ))}
           </CardContent>
         </Card>
+
         </div>
       ) : (
         <Card
