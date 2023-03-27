@@ -64,10 +64,27 @@ function Home({ onLogin }) {
                 <>
                   <LoginForm onLogin={onLogin} />
                   <br />
-                  <p>
-                    Create an account &nbsp;
-                    <button onClick={() => setShowSignUp(true)}>Sign up</button>
-                  </p>
+                  <Button
+                onClick={() => setShowSignUp(true)}
+                sx={{
+                  display: "flex",
+                  border: 1,
+                  borderColor: "white",
+                  cursor: "pointer",
+                  margin: "auto",
+                  backgroundColor: "#c47300",
+                  justifyContent: "center",
+                  alignItems: "end",
+                  position: "relative",
+                  '&:hover': {
+                    backgroundColor: "#994302"
+                  }
+                }}
+              >
+                <Typography variant="h5" color="white">
+                  <strong>Sign up</strong>
+                </Typography>
+              </Button>
                 </>
               )}
             </CardContent>

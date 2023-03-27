@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import ResidentFullProfile from "./ResidentFullProfile";
 import ResActivities from "./ResActivities";
+import leaf2 from "./media/leaf2.jpeg"
 
 function Resident({ resident, activity, onActClick, showActivities }) {
 
@@ -29,6 +30,9 @@ function Resident({ resident, activity, onActClick, showActivities }) {
             borderRadius: "16px",
             border: 1,
             margin: "10px",
+            backgroundImage: `url(${leaf2})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover"
           }}
         >
           <Box
@@ -56,7 +60,13 @@ function Resident({ resident, activity, onActClick, showActivities }) {
             }}
           >
             <Link to={`/residents/${id}`}>
-              <Typography variant="h6">{name}</Typography>
+
+              <Typography variant="h6" sx={{
+                  backgroundColor: "white",
+                  borderRadius: "16px",
+                  textAlign: "center"
+
+              }}>{name}</Typography>
             </Link>
             <br />
             <Link to={`/residents/${id}`}>

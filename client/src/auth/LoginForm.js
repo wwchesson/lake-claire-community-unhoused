@@ -77,10 +77,24 @@ function LoginForm({ onLogin }) {
         </Box>
 
         <br />
-
-        <button className="btn" type="submit">
-          Login
-        </button>
+        <Button
+          sx={{
+            display: "flex",
+            border: 1,
+            borderColor: "white",
+            cursor: "pointer",
+            margin: "auto",
+            backgroundColor: "#c47300",
+            justifyContent: "center",
+            alignItems: "end",
+            position: "relative",
+          }}
+          type="submit"
+        >
+          <Typography variant="h5" color="white">
+            <strong>Login</strong>
+          </Typography>
+        </Button>
         {errors.map((err) => (
           <h4>{err}</h4>
         ))}
