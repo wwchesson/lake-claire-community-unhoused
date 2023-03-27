@@ -1,4 +1,5 @@
-import React, {useState} from "react"
+import React, {useState} from "react";
+
 
 function SignupForm({onLogin}) {
   const [username, setUsername] = useState("");
@@ -34,9 +35,10 @@ function SignupForm({onLogin}) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
+
                 <label htmlFor="first_name">First Name</label>
                 <br />
-                <input 
+                <input
                     type="text"
                     id="first_name"
                     autoComplete="off"
@@ -46,7 +48,7 @@ function SignupForm({onLogin}) {
                 <br />
                 <label htmlFor="last_name">Last Name</label>
                 <br />
-                <input 
+                <input
                     type="text"
                     id="last_name"
                     autoComplete="off"
@@ -56,7 +58,7 @@ function SignupForm({onLogin}) {
                 <br />
                 <label htmlFor="username">Username</label>
                 <br />
-                <input 
+                <input
                     type="text"
                     id="username"
                     autoComplete="off"
@@ -76,7 +78,7 @@ function SignupForm({onLogin}) {
                 <br />
                 <label htmlFor="password">Password Confirmation</label>
                 <br />
-                <input 
+                <input
                     type="text"
                     id="password_confirmation"
                     autoComplete="current-password"

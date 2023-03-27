@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { positions } from "@mui/system";
 import garden from "./garden.jpeg";
+import flowers from "./flowers.jpeg";
 import tree from "./tree.gif";
 
 function Home({ onLogin }) {
@@ -21,11 +22,14 @@ function Home({ onLogin }) {
   return (
     <div>
       <Container
+        maxWidth="x-large"
         sx={{
           backgroundImage: `url(${tree})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          height: "100px",
+          height: "100vh",
+          width: "100vw",
+          position: "fixed",
         }}
       >
         {showLogin ? (
@@ -35,15 +39,18 @@ function Home({ onLogin }) {
               border: 1,
               borderColor: "grey.500",
               margin: "auto",
-              width: 500,
+              width: 300,
               display: "flex",
-              justifyContent: "center",
-              marginTop: "30px",
+              // justifyContent: "center",
+              // alignContent: "center",
+              lineHeight: "1.5",
+              marginTop: "100px",
               marginBottom: "30px",
-              backgroundColor: "#03a329",
+              backgroundColor: "#02c966",
             }}
           >
-            <CardContent>
+            <CardContent
+            >
               {showSignUp ? (
                 <>
                   <SignupForm onLogin={onLogin} />
@@ -65,53 +72,69 @@ function Home({ onLogin }) {
               )}
             </CardContent>
           </Card>
-        ) : null}
-      </Container>
-
-      <Card sx={{ display: "flex" }}>
-        <CardContent
-          style={{
-            backgroundImage: `url(${garden})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            height: "80vh",
-            width: "90vw",
-            backgroundPosition: "center",
-            justifyContent: "center",
-            margin: "auto",
-            // display: "flex",
-          }}
-        >
-          <Typography
-            display="flex"
-            variant="h4"
-            marginTop="350px"
-            color="white"
-            justifyContent="center"
-            alignContent="center"
-          >
-            <strong>The Lake Claire Community for the Unhoused</strong>
-          </Typography>
-          <br />
-          <Button
-            onClick={() => setShowLogin(!showLogin)}
+        ) : (
+          <Card
             sx={{
               display: "flex",
-              border: 1,
-              borderColor: "white",
-              cursor: "crosshair",
-              margin: "auto",
-              backgroundColor: "black",
+              height: "75vh",
+              width: "75vh",
               justifyContent: "center",
               alignItems: "center",
+              margin: "auto",
+              marginTop: "100px",
             }}
           >
-            <Typography variant="h5" color="white">
-              <strong>Login</strong>
-            </Typography>
-          </Button>
-        </CardContent>
-      </Card>
+            <CardContent
+              style={{
+                backgroundImage: `url(${flowers})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "100vh",
+                width: "100vw",
+                backgroundPosition: "center",
+                justifyContent: "center",
+                margin: "auto",
+                // display: "flex",
+              }}
+            >
+              <Typography
+                margin="auto"
+                variant="h4"
+                marginTop="40px"
+                color="#994302"
+                justifyContent="center"
+                textAlign="center"
+              >
+                <strong>The Lake Claire Community</strong>
+                <br />
+                <strong>for the Unhoused</strong>
+              </Typography>
+              <br />
+              <Button
+                onClick={() => setShowLogin(!showLogin)}
+                sx={{
+                  display: "flex",
+                  border: 1,
+                  borderColor: "white",
+                  cursor: "pointer",
+                  margin: "auto",
+                  backgroundColor: "#994302",
+                  justifyContent: "center",
+                  alignItems: "end",
+                  position: "relative",
+                  '&:hover': {
+                    backgroundColor: "#994302"
+                  }
+                }}
+              >
+                <Typography variant="h5" color="white">
+                  <strong>Login</strong>
+                </Typography>
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+      </Container>
     </div>
   );
 }

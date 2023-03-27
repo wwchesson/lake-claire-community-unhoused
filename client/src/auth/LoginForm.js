@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Card,
+  CardContent,
+} from "@mui/material";
+import { textAlign } from "@mui/system";
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -30,29 +39,45 @@ function LoginForm({ onLogin }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <br />
-        <input
-          type="text"
-          className="login-text"
-          id="username"
+      <form className="login" onSubmit={handleSubmit}>
+        <Box
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "15ch" },
+            margin: "auto",
+            alignItems: "center",
+            textAlign: "center",
+            cursor: "pointer",
+          }}
+          noValidate
           autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        >
+          <TextField
+            sx={{
+              marginBottom: "10px",
+              backgroundColor: "white",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+            id="outlined-username-input"
+            label="Username"
+            variant="outlined"
+            autoComplete="off"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <TextField
+            sx={{ marginBottom: "10px", backgroundColor: "white" }}
+            id="outlined-password-input"
+            label="Password"
+            variant="outlined"
+            autoComplete="off"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Box>
+
         <br />
-        <label htmlFor="password">Password</label>
-        <br />
-        <input
-          type="password"
-          className="login-text"
-          id="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
+
         <button className="btn" type="submit">
           Login
         </button>
