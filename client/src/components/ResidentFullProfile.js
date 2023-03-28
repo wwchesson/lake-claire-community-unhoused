@@ -6,8 +6,9 @@ import {
   CardContent,
   Avatar,
   Typography,
-  Button,
+  Container
 } from "@mui/material";
+import greendots from "./media/greendots.jpg"
 
 function ResidentFullProfile({ onActClick, showActivities }) {
   const { id } = useParams();
@@ -37,56 +38,15 @@ function ResidentFullProfile({ onActClick, showActivities }) {
 
 
   return (
-    <div className="full-profile">
-      {showActivities ? (
-        <div>
-                <Card
-          sx={{
-            width: "350px",
-            height: "400px",
-            padding: "40px",
-            borderRadius: "16px",
-            border: 1,
-            margin: "75px",
-            justifyContent: "center",
-            backgroundColor: "#f6f7c3",
-          }}
-        >
-          <Box
-            // className="resident-profile"
-
-            alignItems="center"
-            display="flex"
-            // margin="auto"
-            flexDirection="column"
-            flexGrow="1"
-          >
-            <Avatar
-              alt={name}
-              src={image}
-              sx={{ width: 150, height: 150 }}
-            ></Avatar>
-          </Box>
-
-          <CardContent
-            sx={{
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              marginLeft: "80px",
-              // display: "flex",
-            }}
-          >
-          <Typography variant="h6">
-            {name}
-          </Typography>
-          {resAct.map(act => (
-            <Typography key={act.id}>{act.name} - {act.day_of_week} - {act.time_of_day}</Typography>
-          ))}
-          </CardContent>
-        </Card>
-
-        </div>
-      ) : (
+    <Container
+    sx={{
+      backgroundImage: `url(${greendots})`,
+      height: "100vh",
+      position: "absolute",
+      display: "flex",
+      justifyContent: "center"
+    }}
+    >
         <Card
           sx={{
             width: "350px",
@@ -142,8 +102,11 @@ function ResidentFullProfile({ onActClick, showActivities }) {
             </Typography>
           </CardContent>
         </Card>
-      )}
-    </div>
+
+
+    </Container>
+
+
   );
 }
 

@@ -19,12 +19,8 @@ function Resident({ resident, activity, onActClick, showActivities }) {
   const {
     id,
     name,
-    date_of_birth,
-    phone,
-    email,
     image,
     resident_therapist,
-    res_activities,
   } = resident;
 
   return (
@@ -44,11 +40,8 @@ function Resident({ resident, activity, onActClick, showActivities }) {
           }}
         >
           <Box
-            // className="resident-profile"
-
             alignItems="center"
             display="flex"
-            // margin="auto"
             flexDirection="column"
             flexGrow="1"
           >
@@ -80,22 +73,19 @@ function Resident({ resident, activity, onActClick, showActivities }) {
               </Typography>
             </Link>
             <br />
-            <Link to={`/residents/${id}`}>
-              <Button
+            <Link to={`/residentactivities/${id}`}>
+            <Typography
+                variant="h6"
                 sx={{
                   backgroundColor: "white",
                   borderRadius: "16px",
                   textAlign: "center",
-                  justifyContent: "center",
-                  margin: "auto",
-                  marginLeft: "30px",
-                  marginBottom: "20px",
                   fontFamily: "fantasy",
+                  marginBottom: "18px"
                 }}
-                onClick={() => onActClick(true)}
               >
                 Activities
-              </Button>
+              </Typography>
             </Link>
 
             <Typography

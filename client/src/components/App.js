@@ -7,6 +7,7 @@ import Home from "../auth/Home";
 import ResidentUpdate from "./ResInfoUpdate";
 import ResidentFullProfile from "./ResidentFullProfile";
 import ResActivities from "./ResActivities";
+import {Container} from "@mui/material"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,6 +63,7 @@ function App() {
             <ResidentsList residents={residents} onActClick={setShowActivities} showActivities={showActivities}/>
           }
         />
+
         <Route
           path="/resident_intake"
           element={
@@ -75,6 +77,7 @@ function App() {
         />}></Route>
       <Route path="/residentactivities/:id" element={<ResActivities />}>
       </Route>
+
       </Routes>
     </div>
   );

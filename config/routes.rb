@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # get "/residents", to: "users#getresidents"
 
-  get "/residentactivities/:id", to: "residents#res_activities_route"
+  get "/residentactivities/:id", to: "residents#show"
   resources :dorms
   resources :residents
   # resources :counselors

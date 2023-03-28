@@ -38,7 +38,7 @@ function NavBar({ user, setUser }) {
             justifyContent: "space-evenly",
           }}
         >
-          <Typography variant="h6" sx={{ marginRight: "30px" }}>
+          {/* <Typography variant="h6" sx={{ marginRight: "30px" }}>
             <Link
               href="/residents"
               style={{ color: "white", fontFamily: "fantasy" }}
@@ -57,7 +57,7 @@ function NavBar({ user, setUser }) {
             >
               <strong>New Resident</strong>
             </Link>
-          </Typography>
+          </Typography> */}
         </Box>
       </CardContent>
     </Card>

@@ -3,6 +3,7 @@ import { Tiles, H3 } from "./StyleElements";
 import {Container, Grid, Typography } from "@mui/material"
 
 import Resident from "./ResidentCard";
+import ResActivities from "./ResActivities";
 
 function ResidentsList({residents, onActClick, showActivities}) {
   const [activity, setActivity] = useState([])
@@ -11,7 +12,7 @@ function ResidentsList({residents, onActClick, showActivities}) {
     fetch("/activities")
     .then(r => r.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       setActivity(data)
     })
   }, [])
@@ -40,13 +41,16 @@ function ResidentsList({residents, onActClick, showActivities}) {
           <Resident
             key={resident.id}
             resident={resident}
-            activity={resident.res_activities}
+            // activity={resident.res_activities}
             onActClick={onActClick}
             showActivities={showActivities}
             // act={activity.filter((act) => act.resident_id === resident.id)}
           />
+
+
         ))}
         </Grid>
+
       </Container>
 
 
