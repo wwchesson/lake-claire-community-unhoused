@@ -6,7 +6,9 @@ import {
   CardContent,
   CardMedia,
   Link,
+  Button,
 } from "@mui/material";
+import TreeMenu from "./Menu"
 import treelogo from "./media//treelogo.jpeg";
 
 function NavBar({ user, setUser }) {
@@ -26,7 +28,8 @@ function NavBar({ user, setUser }) {
       <CardContent
         sx={{ marginTop: "1px", marginLeft: "10px", display: "flex" }}
       >
-        <CardMedia component="img" image={treelogo} />
+      <TreeMenu />
+
         <Box
           sx={{
             display: "flex",
