@@ -21,7 +21,6 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <div>
     <Card
       // id="welcome-card"
       sx={{ height: "110px", alignItems: "center", backgroundColor: "green" }}
@@ -61,7 +60,6 @@ function NavBar({ user, setUser }) {
 
       </CardContent>
     </Card>
-    </div>
   );
 }
 
