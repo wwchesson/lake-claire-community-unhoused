@@ -13,11 +13,19 @@ import {
 } from "@mui/material";
 import ResidentFullProfile from "./ResidentFullProfile";
 import ResActivities from "./ResActivities";
-import leaf2 from "./media/leaf2.jpeg"
+import leaf2 from "./media/leaf2.jpeg";
 
 function Resident({ resident, activity, onActClick, showActivities }) {
-
-  const { id, name, date_of_birth, phone, email, image, resident_therapist, res_activities } = resident;
+  const {
+    id,
+    name,
+    date_of_birth,
+    phone,
+    email,
+    image,
+    resident_therapist,
+    res_activities,
+  } = resident;
 
   return (
     <div>
@@ -32,7 +40,7 @@ function Resident({ resident, activity, onActClick, showActivities }) {
             margin: "10px",
             backgroundImage: `url(${leaf2})`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
         >
           <Box
@@ -55,57 +63,58 @@ function Resident({ resident, activity, onActClick, showActivities }) {
             sx={{
               justifyContent: "center",
               alignItems: "center",
-              marginLeft: "10px"
-              // display: "flex",
+              margin: "auto",
             }}
           >
             <Link to={`/residents/${id}`}>
-
-              <Typography variant="h6" sx={{
+              <Typography
+                variant="h6"
+                sx={{
                   backgroundColor: "white",
                   borderRadius: "16px",
-                  textAlign: "center"
-
-              }}>{name}</Typography>
+                  textAlign: "center",
+                  fontFamily: "fantasy",
+                }}
+              >
+                {name}
+              </Typography>
             </Link>
             <br />
             <Link to={`/residents/${id}`}>
-            <Button onClick={() => onActClick(true)}>
-              Activities
-            </Button>
-
+              <Button
+                sx={{
+                  backgroundColor: "white",
+                  borderRadius: "16px",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "auto",
+                  marginLeft: "30px",
+                  marginBottom: "20px",
+                  fontFamily: "fantasy",
+                }}
+                onClick={() => onActClick(true)}
+              >
+                Activities
+              </Button>
             </Link>
 
-
-            {/* <Link to={`/residents/${id}`} >
-            <Typography>
-              Activities
-            </Typography>
-            </Link> */}
-
-            <br />
-            <Typography>
+            <Typography
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "16px",
+                textAlign: "center",
+                justifyContent: "center",
+                margin: "auto",
+                padding: "2px",
+                marginBottom: "20px",
+                width: "200px",
+                fontFamily: "fantasy",
+              }}
+            >
               Mentor: {resident_therapist}
             </Typography>
           </CardContent>
         </Card>
-
-        {/* <Card>
-        <h3>
-          <strong>{name}</strong>
-        </h3>
-        <h4>Date of Birth: {date_of_birth}</h4>
-        <h4> Phone: {phone}</h4>
-        <h4>Email Address: {email}</h4>
-        <br />
-        {/* <h4>Activities: </h4>{showAct()}
-      <h4>Dorm:</h4>{showDorm()}
-      <h4>Counselor:</h4>{showCounselor()} */}
-        {/*
-        <h4>
-          <Link to={`/residents/${id}`}>Click to update resident</Link>
-        </h4>
-      </Card> */}
       </Grid>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Tiles, H3 } from "./StyleElements";
-import {Container, Grid } from "@mui/material"
+import {Container, Grid, Typography } from "@mui/material"
 
 import Resident from "./ResidentCard";
 
@@ -20,7 +20,19 @@ function ResidentsList({residents, onActClick, showActivities}) {
 
   return (
     <div className="residents">
-      <H3>Residents</H3>
+      <Typography
+      variant="h3"
+        sx={{
+          textAlign: "center",
+          padding: "20px",
+          fontFamily: "fantasy"
+        }}
+      >
+        <strong>
+          Our Residents
+        </strong>
+      </Typography>
+
 
       <Container >
         <Grid container spacing={2} justifyContent="center">

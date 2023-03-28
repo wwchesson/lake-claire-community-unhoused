@@ -11,9 +11,10 @@ import {
   Typography,
 } from "@mui/material";
 import { positions } from "@mui/system";
-import garden from "./garden.jpeg";
-import flowers from "./flowers.jpeg";
-import tree from "./tree.gif";
+import garden from "./media/garden.jpeg";
+import flowers from "./media/flowers.jpeg";
+import tree from "./media/tree.gif";
+import rooftop from "./media/rooftop.jpg";
 
 function Home({ onLogin }) {
   const [showLogin, setShowLogin] = useState(false);
@@ -41,30 +42,27 @@ function Home({ onLogin }) {
               margin: "auto",
               width: 300,
               display: "flex",
-              // justifyContent: "center",
-              // alignContent: "center",
               lineHeight: "1.5",
               marginTop: "100px",
               marginBottom: "30px",
               backgroundColor: "#02c966",
             }}
           >
-            <CardContent
-            >
+            <CardContent>
               {showSignUp ? (
                 <>
-                  <SignupForm onLogin={onLogin} />
+                  {/* <SignupForm onLogin={onLogin} />
                   <br />
                   <p>
                     Already have an account? &nbsp;
                     <button onClick={() => setShowSignUp(false)}>Log In</button>
-                  </p>
+                  </p> */}
                 </>
               ) : (
                 <>
                   <LoginForm onLogin={onLogin} />
                   <br />
-                  <Button
+                  {/* <Button
                 onClick={() => setShowSignUp(true)}
                 sx={{
                   display: "flex",
@@ -84,7 +82,29 @@ function Home({ onLogin }) {
                 <Typography variant="h5" color="white">
                   <strong>Sign up</strong>
                 </Typography>
-              </Button>
+              </Button> */}
+
+                  <Card
+                    sx={{
+                      backgroundColor: "#c47300",
+                      width: "200px",
+                      margin: "auto",
+                      border: 1,
+                      borderColor: "white",
+                      borderRadius: "16px",
+                      marginTop: "15px",
+                    }}
+                  >
+                    <CardContent>
+                      <Typography variant="h6" color="white">
+                        Mock Login
+                        <br />
+                        un: jcameron1234
+                        <br />
+                        pw: jcameron1234
+                      </Typography>
+                    </CardContent>
+                  </Card>
                 </>
               )}
             </CardContent>
@@ -103,11 +123,12 @@ function Home({ onLogin }) {
           >
             <CardContent
               style={{
-                backgroundImage: `url(${flowers})`,
+                backgroundImage: `url(${rooftop})`,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
+                backgroundSize: "contain",
+                backgroundColor: "orange",
                 height: "100vh",
-                width: "100vw",
+                width: "80vw",
                 backgroundPosition: "center",
                 justifyContent: "center",
                 margin: "auto",
@@ -117,8 +138,8 @@ function Home({ onLogin }) {
               <Typography
                 margin="auto"
                 variant="h4"
-                marginTop="40px"
-                color="#994302"
+                marginTop="5px"
+                color="#593001"
                 justifyContent="center"
                 textAlign="center"
               >
@@ -139,9 +160,9 @@ function Home({ onLogin }) {
                   justifyContent: "center",
                   alignItems: "end",
                   position: "relative",
-                  '&:hover': {
-                    backgroundColor: "#994302"
-                  }
+                  "&:hover": {
+                    backgroundColor: "#994302",
+                  },
                 }}
               >
                 <Typography variant="h5" color="white">
