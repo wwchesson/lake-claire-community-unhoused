@@ -1,8 +1,15 @@
 import React from "react";
-import { Nav, NavLink, NavMenu, H4 } from "./StyleElements";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  CardMedia,
+  Link,
+} from "@mui/material";
+import treelogo from "./media//treelogo.jpeg";
 
-function NavBar({user, setUser}) {
-  
+function NavBar({ user, setUser }) {
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
@@ -12,22 +19,45 @@ function NavBar({user, setUser}) {
   }
 
   return (
-    <div className="navbar">
-      <Nav>
-        <NavMenu>
-          <NavLink to="/">
-            Home
-          </NavLink>
-          <NavLink to="/residents">
-            Residents
-          </NavLink>
-          <NavLink to="/resident_intake">Resident Intake</NavLink>
-          <button className="btn" onClick={handleLogoutClick}>Logout</button> 
-          <H4>{user.firstname}</H4>
-          
-        </NavMenu>
-      </Nav>
-    </div>
+    <Card
+      id="welcome-card"
+      sx={{ display: "flex", marginBottom: "1px", height: "90px" }}
+    >
+      <CardContent
+        sx={{ marginTop: "1px", marginLeft: "10px", display: "flex" }}
+      >
+        <CardMedia component="img" image={treelogo} />
+        <Box
+          sx={{
+            display: "flex",
+            position: "absolute",
+            right: "20px",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Typography variant="h6" sx={{ marginRight: "30px" }}>
+            <Link
+              href="/residents"
+              style={{ color: "white", fontFamily: "fantasy" }}
+            >
+              <strong>Residents</strong>
+            </Link>
+          </Typography>
+          <Typography variant="h6">
+            <Link
+              href="/resident_intake"
+              style={{
+                color: "white",
+                fontFamily: "fantasy",
+                marginRight: "15px",
+              }}
+            >
+              <strong>New Resident</strong>
+            </Link>
+          </Typography>
+        </Box>
+      </CardContent>
+    </Card>
   );
 }
 

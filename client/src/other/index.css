@@ -16,6 +16,12 @@ code {
   text-align: center;
 }
 
+#welcome-card {
+  display: "flex";
+  align-items: "center";
+  background-color: green;
+}
+
 .resident-form{
   text-align: center;
 }
