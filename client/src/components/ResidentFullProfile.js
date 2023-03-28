@@ -6,14 +6,14 @@ import {
   CardContent,
   Avatar,
   Typography,
-  Container
+  Container,
 } from "@mui/material";
-import greendots from "./media/greendots.jpg"
+import greendots from "./media/greendots.jpg";
 
 function ResidentFullProfile({ onActClick, showActivities }) {
   const { id } = useParams();
   const [individualRes, setIndividualRes] = useState([]);
-  const [resAct, setResAct] = useState([])
+  const [resAct, setResAct] = useState([]);
 
   const {
     name,
@@ -30,83 +30,79 @@ function ResidentFullProfile({ onActClick, showActivities }) {
       .then((r) => r.json())
       .then((data) => {
         setIndividualRes(data);
-        setResAct(data.res_activities)
-
+        setResAct(data.res_activities);
       });
   }, [id]);
 
-
-
   return (
     <Container
-    sx={{
-      backgroundImage: `url(${greendots})`,
-      height: "100vh",
-      position: "absolute",
-      display: "flex",
-      justifyContent: "center"
-    }}
+      sx={{
+        backgroundImage: `url(${greendots})`,
+        height: "100vh",
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+      }}
     >
-        <Card
+      <Card
+        sx={{
+          width: "300px",
+          height: "300px",
+          padding: "40px",
+          borderRadius: "16px",
+
+          border: 12,
+          borderColor: "white",
+          margin: "auto",
+          marginTop: "75px",
+          justifyContent: "center",
+          backgroundColor: "#32a852",
+        }}
+      >
+        <Box
+          // className="resident-profile"
+
+          alignItems="center"
+          display="flex"
+          // margin="auto"
+          flexDirection="column"
+          flexGrow="1"
+        >
+          <Avatar
+            alt={name}
+            src={image}
+            sx={{ width: 150, height: 150 }}
+          ></Avatar>
+        </Box>
+
+        <CardContent
           sx={{
-            width: "350px",
-            height: "400px",
-            padding: "40px",
-            borderRadius: "16px",
-            border: 1,
-            margin: "75px",
-            justifyContent: "center",
-            backgroundColor: "#f6f7c3",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            marginLeft: "40px",
+            // display: "flex",
           }}
         >
-          <Box
-            // className="resident-profile"
-
-            alignItems="center"
-            display="flex"
-            // margin="auto"
-            flexDirection="column"
-            flexGrow="1"
-          >
-            <Avatar
-              alt={name}
-              src={image}
-              sx={{ width: 150, height: 150 }}
-            ></Avatar>
-          </Box>
-
-          <CardContent
-            sx={{
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              marginLeft: "80px",
-              // display: "flex",
-            }}
-          >
-            <Typography variant="h6">
-              <strong>{name}</strong>
-            </Typography>
-            <br />
-            <Typography>
-              <strong>DOB:</strong>
-              {date_of_birth}
-            </Typography>
-            <Typography>
-              <strong>Phone:</strong> {phone}
-            </Typography>
-            <Typography>
-              <strong>Email:</strong> {email}
-            </Typography>
-            <Typography>
-              <strong>Dorm:</strong> {resident_dorm}
-            </Typography>
-          </CardContent>
-        </Card>
-
-
+          <Typography variant="h6" color="white">
+            <strong>{name}</strong>
+          </Typography>
+          <br />
+          <Typography color="white">
+            <strong>DOB: </strong>
+            {date_of_birth}
+          </Typography>
+          <Typography color="white">
+            <strong>Phone:</strong> {phone}
+          </Typography>
+          <Typography color="white">
+            <strong>Email:</strong> {email}
+          </Typography>
+          <Typography color="white">
+            <strong>Dorm:</strong> {resident_dorm}
+          </Typography>
+        </CardContent>
+      </Card>
     </Container>
-
-
   );
 }
 

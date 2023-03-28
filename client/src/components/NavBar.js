@@ -8,7 +8,7 @@ import {
   Link,
   Button,
 } from "@mui/material";
-import TreeMenu from "./Menu"
+import TreeMenu from "./Menu";
 import treelogo from "./media//treelogo.jpeg";
 
 function NavBar({ user, setUser }) {
@@ -21,24 +21,23 @@ function NavBar({ user, setUser }) {
   }
 
   return (
+    <div>
     <Card
-      id="welcome-card"
-      sx={{ display: "flex", marginBottom: "1px", height: "90px" }}
+      // id="welcome-card"
+      sx={{ height: "110px", alignItems: "center", backgroundColor: "green" }}
     >
-      <CardContent
-        sx={{ marginTop: "1px", marginLeft: "10px", display: "flex" }}
-      >
-      <TreeMenu />
+      <CardContent>
+        <TreeMenu user={user} setUser={setUser}/>
 
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
             position: "absolute",
             right: "20px",
             justifyContent: "space-evenly",
           }}
-        >
-          {/* <Typography variant="h6" sx={{ marginRight: "30px" }}>
+        > */}
+        {/* <Typography variant="h6" sx={{ marginRight: "30px" }}>
             <Link
               href="/residents"
               style={{ color: "white", fontFamily: "fantasy" }}
@@ -58,9 +57,11 @@ function NavBar({ user, setUser }) {
               <strong>New Resident</strong>
             </Link>
           </Typography> */}
-        </Box>
+        {/* </Box> */}
+
       </CardContent>
     </Card>
+    </div>
   );
 }
 
