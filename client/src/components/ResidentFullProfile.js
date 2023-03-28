@@ -47,7 +47,7 @@ function ResidentFullProfile({ onActClick, showActivities }) {
       <Card
         sx={{
           width: "300px",
-          height: "300px",
+          height: "350px",
           padding: "40px",
           borderRadius: "16px",
 

@@ -35,7 +35,7 @@ function ResActivities({ activities }) {
     >
       <Card
         sx={{
-          width: "300px",
+          width: "250px",
           height: "350px",
           padding: "40px",
           borderRadius: "16px",
@@ -68,7 +68,7 @@ function ResActivities({ activities }) {
           sx={{
             justifyContent: "space-evenly",
             alignItems: "center",
-            marginLeft: "40px",
+            marginLeft: "25px",
             // display: "flex",
           }}
         >

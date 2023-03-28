@@ -54,10 +54,11 @@ function ResidentIntake({ onAddResident }) {
             margin: "auto",
             alignItems: "center",
             marginTop: "50px",
+            marginBottom: "10px",
             textAlign: "center",
             cursor: "pointer",
             width: "300px",
-            height: "700px",
+            height: "650px",
             border: 12,
             borderRadius: 16,
             borderColor: "green",
@@ -138,7 +139,7 @@ function ResidentIntake({ onAddResident }) {
           type="submit"
         >
           <Typography variant="h5" color="white">
-            <strong>Login</strong>
+            <strong>Submit</strong>
           </Typography>
         </Button>
         </Box>

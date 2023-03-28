@@ -43,7 +43,7 @@ function Home({ onLogin }) {
               width: 300,
               display: "flex",
               lineHeight: "1.5",
-              marginTop: "100px",
+              marginTop: "50px",
               marginBottom: "30px",
               backgroundColor: "#02c966",
             }}
@@ -92,7 +92,7 @@ function Home({ onLogin }) {
                       border: 1,
                       borderColor: "white",
                       borderRadius: "16px",
-                      marginTop: "15px",
+                      marginTop: "10px",
                     }}
                   >
                     <CardContent>
@@ -114,11 +114,11 @@ function Home({ onLogin }) {
             sx={{
               display: "flex",
               height: "75vh",
-              width: "75vh",
+              width: "50vh",
               justifyContent: "center",
-              alignItems: "center",
+              alignContent: "center",
               margin: "auto",
-              marginTop: "100px",
+              marginTop: "20px"
             }}
           >
             <CardContent
@@ -128,7 +128,7 @@ function Home({ onLogin }) {
                 backgroundSize: "contain",
                 backgroundColor: "orange",
                 height: "100vh",
-                width: "80vw",
+                width: "100vw",
                 backgroundPosition: "center",
                 justifyContent: "center",
                 margin: "auto",
