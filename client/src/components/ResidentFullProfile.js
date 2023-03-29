@@ -26,7 +26,7 @@ function ResidentFullProfile({ onActClick, showActivities }) {
   } = individualRes;
 
   useEffect(() => {
-    fetch(`${id}`)
+    fetch(`/residents/${id}`)
       .then((r) => r.json())
       .then((data) => {
         setIndividualRes(data);

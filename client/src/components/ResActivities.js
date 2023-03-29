@@ -17,7 +17,7 @@ function ResActivities({ activities }) {
   const { name, image } = res;
 
   useEffect(() => {
-    fetch(`${id}`)
+    fetch(`/residents/${id}`)
       .then((r) => r.json())
       .then((data) => {
         setRes(data);
