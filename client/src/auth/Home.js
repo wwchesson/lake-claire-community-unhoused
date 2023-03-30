@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
-import { LoginCard } from "../components/StyleElements";
 import {
   Container,
   Grid,
@@ -10,9 +9,6 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import { positions } from "@mui/system";
-import garden from "./media/garden.jpeg";
-import flowers from "./media/flowers.jpeg";
 import tree from "./media/tree.gif";
 import rooftop from "./media/rooftop.jpg";
 

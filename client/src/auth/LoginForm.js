@@ -30,7 +30,7 @@ function LoginForm({ onLogin }) {
           console.log(user);
           onLogin(user);
         });
-        navigate("/residents");
+        navigate("/allresidents");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

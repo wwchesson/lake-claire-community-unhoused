@@ -1,15 +1,9 @@
 import React from "react";
 import {
-  Box,
-  Typography,
   Card,
   CardContent,
-  CardMedia,
-  Link,
-  Button,
 } from "@mui/material";
 import TreeMenu from "./Menu";
-import treelogo from "./media//treelogo.jpeg";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {

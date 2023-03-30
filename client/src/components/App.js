@@ -58,7 +58,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home onLogin={setUser} user={user} />} />
         <Route
-          path="/residents"
+          path="/allresidents"
           element={
             <ResidentsList residents={residents} onActClick={setShowActivities} showActivities={showActivities}/>
           }
@@ -72,7 +72,7 @@ function App() {
             />
           }
         />
-        <Route path="/residents/:id" element={<ResidentFullProfile onUpdateResident={handleUpdateResident}
+        <Route path="/residentprofile/:id" element={<ResidentFullProfile onUpdateResident={handleUpdateResident}
         onDeleteResident={handleDeleteResident} onActClick={setShowActivities} showActivities={showActivities}
         />}></Route>
       <Route path="/residentactivities/:id" element={<ResActivities />}>

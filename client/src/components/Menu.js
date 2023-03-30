@@ -38,7 +38,7 @@ function TreeMenu({user, setUser}) {
       </Button>
 
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem component={Link} href="/residents">Residents </MenuItem>
+        <MenuItem component={Link} href="/allresidents">Residents </MenuItem>
         <MenuItem component={Link} href="/resident_intake">New Resident</MenuItem>
         <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
       </Menu>

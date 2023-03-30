@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-// import { Card } from "./StyleElements";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -11,11 +10,9 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import ResidentFullProfile from "./ResidentFullProfile";
-import ResActivities from "./ResActivities";
 import leaf2 from "./media/leaf2.jpeg";
 
-function Resident({ resident, activity, onActClick, showActivities }) {
+function Resident({ resident }) {
   const {
     id,
     name,
@@ -59,7 +56,7 @@ function Resident({ resident, activity, onActClick, showActivities }) {
               margin: "auto",
             }}
           >
-            <Link to={`/residents/${id}`}>
+            <Link to={`/residentprofile/${id}`}>
               <Typography
                 variant="h6"
                 sx={{

@@ -10,10 +10,9 @@ import {
 } from "@mui/material";
 import greendots from "./media/greendots.jpg";
 
-function ResidentFullProfile({ onActClick, showActivities }) {
+function ResidentFullProfile() {
   const { id } = useParams();
   const [individualRes, setIndividualRes] = useState([]);
-  const [resAct, setResAct] = useState([]);
 
   const {
     name,
@@ -22,7 +21,6 @@ function ResidentFullProfile({ onActClick, showActivities }) {
     date_of_birth,
     phone,
     resident_dorm,
-    res_activities,
   } = individualRes;
 
   useEffect(() => {
@@ -30,7 +28,6 @@ function ResidentFullProfile({ onActClick, showActivities }) {
       .then((r) => r.json())
       .then((data) => {
         setIndividualRes(data);
-        setResAct(data.res_activities);
       });
   }, [id]);
 
