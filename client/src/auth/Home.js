@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import tree from "./media/tree.gif";
 import rooftop from "./media/rooftop.jpg";
+import leafbackdrop from "./media/leafbackdrop.png"
 
 function Home({ onLogin }) {
   const [showLogin, setShowLogin] = useState(false);
@@ -21,7 +22,7 @@ function Home({ onLogin }) {
       <Container
         maxWidth="x-large"
         sx={{
-          backgroundImage: `url(${tree})`,
+          backgroundImage: `url(${leafbackdrop})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           height: "100vh",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Card, CardMedia, Menu, MenuItem, Link, Typography } from "@mui/material";
+import { Button, Card, CardMedia, Menu, MenuItem, Typography } from "@mui/material";
+import {Link} from "react-router-dom"
 import treelogo from "./media/treelogo.jpeg";
 
 function TreeMenu({user, setUser}) {
@@ -38,8 +39,8 @@ function TreeMenu({user, setUser}) {
       </Button>
 
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem component={Link} href="/allresidents">Residents </MenuItem>
-        <MenuItem component={Link} href="/resident_intake">New Resident</MenuItem>
+        <MenuItem component={Link} to="/allresidents">Residents </MenuItem>
+        <MenuItem component={Link} to="/resident_intake">New Resident</MenuItem>
         <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
       </Menu>
     </div>
