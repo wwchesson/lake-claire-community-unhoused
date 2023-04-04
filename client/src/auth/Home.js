@@ -110,8 +110,8 @@ function Home({ onLogin }) {
           <Card
             sx={{
               display: "flex",
-              height: "75vh",
-              width: "50vh",
+              height: "60vh",
+              width: "40vh",
               justifyContent: "center",
               alignContent: "center",
               margin: "auto",
